@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>test ajax</title>
+    </head>
+    <body>
+        <script type="text/javascript" src="utils/jUtils.js"></script>
+        <script type="text/javascript">
+            console.log(window.jutils);
+            window.jutils.ajax({
+                'url': 'http://172.16.15.197:5001/home/test?code=1312',
+                'success': function (data) {
+                    console.log(data);
+                }
+            });
+            window.jutils.ajax({
+                'method': 'post',
+                'url': 'http://172.16.15.197:5001/home/JSONTest',
+                'data': {
+                    'name': 'abc',
+                    'password': '123'
+                },
+                'success': function (data) {
+                    console.log(data);
+                }
+            });
+            window.jutils.ajax({
+                'method': 'post',
+                'url': 'http://172.16.15.197:5001/home/JSONTest',
+                'data': {
+                    'name': 'abc',
+                    'password': '123'
+                },
+                'header': {
+                    'contentType': 'json'
+                },
+                'dataType': 'json',
+                'success': function (data) {
+                    console.log(data);
+                }
+            });
+        </script>
+    </body>
+</html>

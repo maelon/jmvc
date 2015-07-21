@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+        </style>
+    </head>
+    <body>
+        <p>lsjflajsdfljasdlfjalsjdflakjsdlfjas</p>
+        <script src="../src/jClass.js"></script>
+        <script src="../src/jMVC.js"></script>
+        <script>
+            jclass.define({
+                'name': 'A',
+                'constructor': function(name, age) {
+                    this.name = name;
+                    this.age = age;
+                    console.log('class A');
+                }
+            }, {
+                '__state': 0,
+                'name': 'a',
+                'age': 10,
+                'changeState': function () {
+                    console.log('A', this.__state);
+                    this.__state = 1;
+                    console.log('A', this.__state);
+                }
+            }, {
+                'ClassName': 'A'
+            });
+            jclass.define({
+                'name': 'A.B',
+                'constructor': function(name, age) {
+                    this.jsuper(this, name, age);
+
+                    window.jj = this.jsuper;
+                    window.jjj = this;
+                    console.log('class B', this.jsuper);
+
+                    this.jsuper.changeState();
+                },
+                'parent': 'A'
+            }, {
+                'changeState': function () {
+                    console.log('B', this.__state);
+                    this.__state = 2;
+                    console.log('B', this.__state);
+
+                    window.hh = this;
+                }
+            }, {
+                'ClassName': 'B'
+            });
+            var a = new (jclass('A'))('aaa', 10101);
+            var b = new (jclass('A.B'))('bbb', 21312);
+        </script>
+    </body>
+</html>
