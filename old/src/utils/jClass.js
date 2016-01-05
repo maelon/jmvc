@@ -1,5 +1,4 @@
 /*===================================================================
-#    FileName: jutils.js
 #      Author: Maelon.J
 #       Email: maelon.j@gmail.com
 #  CreateTime: 2015-06-29 13:13

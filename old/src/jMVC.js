@@ -13,7 +13,7 @@ if(window.jclass === undefined || window.jclass.__jclass !== 'jclass')
 window.jmvc || (window.jmvc = {});
 
 /**
-*  Facade
+*  Class Facade
 */
 (function () {
     var classInfo = {
@@ -42,3 +42,24 @@ window.jmvc || (window.jmvc = {});
     jclass.define(classInfo, classTraits, classStatics);
 })();
 jmvc.__facade = jclass('jMVC.core.__Facade').getInstance();
+
+/**
+*  Class Observer
+*/
+(function () {
+    var classInfo = {
+        'name': 'jMVC.core.__Observer',
+        'constructor': function () {
+            this.__facade = jclass('jMVC.core.__Facade').getInstance(),
+        }
+    };
+    var classTraits = {
+        'registerCommand': function (name, callback) {
+        },
+        'sendCommand': function (name, param) {
+        }
+    };
+    var classStatics = {
+    };
+    jclass.define(classInfo, classTraits, classStatics);
+})();

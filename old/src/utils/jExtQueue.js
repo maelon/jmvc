@@ -7,15 +7,6 @@
 ===================================================================*/
 
 (function (scope) {
-    /**
-    * 队列加载图片
-    *
-    * imgQuery: [{imgUrl, readyCallback}]
-    * readyCallback: function
-    * errorCallback: function
-    */
-    scope.loadImgQueue = function (imgQueue, readyCallback, errorCallback) {
 
-    }
 })(window.jQueue || (window.jQueue = {}));
 

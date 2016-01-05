@@ -1,3 +1,11 @@
+/*===================================================================
+#    FileName: classMapManager.js
+#      Author: Maelon.J
+#       Email: maelon.j@gmail.com
+#  CreateTime: 2015-08-31 17:09
+      Version: 0.0.1
+===================================================================*/
+
 var _classPM = (function() {
     var _classMap = { 
         '__root': 'root',
