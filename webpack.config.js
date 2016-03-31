@@ -1,7 +1,14 @@
+var webpack = require('webpack');
+var path = require('path');
+var htmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
-    'entry': './test-es6.js',
+    'entry': {
+        'app': ['./test-es6.js']
+    },
     'output': {
-        'path': __dirname,
+        'path': path.resolve(__dirname, 'build'),
+        'publicPath': '/static/',
         'filename': '[name].[chunkhash].js',
         'sourceMapFilename': '[name].[chunkhash].js'
     },
@@ -17,5 +24,12 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    'plugins': [
+        new webpack.optimize.UglifyJsPlugin({
+            'compress': {
+                'warnings': false
+            }
+        })
+    ]
 }
