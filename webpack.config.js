@@ -8,11 +8,10 @@ module.exports = {
     },
     'output': {
         'path': path.resolve(__dirname, 'build'),
-        'publicPath': '/static/',
         'filename': '[name].[chunkhash].js',
-        'sourceMapFilename': '[name].[chunkhash].js'
+        'sourceMapFilename': '[name].[chunkhash].js.map'
     },
-    'devtool': 'inline-source-map',
+    'devtool': 'source-map',
     'module': {
         loaders: [
             {
