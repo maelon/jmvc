@@ -40,3 +40,4 @@ class ISubscriber {
     }
 }
 
+export default ISubscriber;
