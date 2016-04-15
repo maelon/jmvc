@@ -9,33 +9,35 @@
 class INotification {
 
     /**
-    * @description
+    * @description 通知抽象类
     * @constructor
     */
     constructor() {
     }
 
     /**
-    * @description
+    * @description 通知名
     * @public
-    * @return 
+    * @return {String}
     */
     get name() {
     }
 
     /**
-    * @description
+    * @description 通知体
     * @public
-    * @return 
+    * @return {Object}
     */
     get body() {
     }
 
     /**
-    * @description
+    * @description 通知类型
     * @public
-    * @return 
+    * @return {String}
     */
     get type() {
     }
 }
+
+export default INotification;

@@ -36,7 +36,7 @@ class ISubscriber {
     * @public
     * @param {INotifation} notification 通知对象
     */
-    notifySubscriber(notification) {
+    notify(notification) {
     }
 }
 
