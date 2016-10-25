@@ -6,4 +6,4 @@
 # Description: 通知类的实现类
 ===================================================================*/
 
-import INotification from './pslib/';
+import INotification from 'pslib/interface_ps/INotification';

@@ -7,11 +7,17 @@ module.exports = {
         'app': ['./test-es6.js']
     },
     'output': {
-        'path': path.resolve(__dirname, 'build'),
+        'path': path.resolve(__dirname, '../build'),
         'filename': '[name].[chunkhash].js',
         'sourceMapFilename': '[name].[chunkhash].js.map'
     },
     'devtool': 'source-map',
+    'resolve': {
+        'alias': {
+            'pslib': path.resolve(__dirname, '../src/pslib')
+        },
+        'extensions': ['', 'js']
+    },
     'module': {
         loaders: [
             {
