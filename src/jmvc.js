@@ -1,8 +1,12 @@
 'use strict';
 
-class JMVC {
-    constructor() {
-    }
-}
+import facade from 'facade';
+import view from 'view';
+import model from 'model';
+import controller from 'controller';
+import proxy from 'proxy';
+import command from 'command';
 
-module.exports = JMVC;
+const jmvc  = { facade, view, model, controller, proxy, command };
+
+export default jmvc;
