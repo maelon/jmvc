@@ -1,17 +1,29 @@
-var webpack = require('webpack');
-var path = require('path');
-var htmlWebpackPlugin = require('html-webpack-plugin');
+'use strict';
+
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
     'entry': {
-        'app': ['./test-es6.js']
+        'jmvc': [ path.resolve(__dirname, '../src/jmvc.js') ]
     },
     'output': {
-        'path': path.resolve(__dirname, 'build'),
-        'filename': '[name].[chunkhash].js',
-        'sourceMapFilename': '[name].[chunkhash].js.map'
+        'path': path.resolve(__dirname, '../dist'),
+        'filename': '[name].min.js',
+        'sourceMapFilename': '[name].js.map',
+        'library': '[name]',
+        'libraryTarget': 'umd'
     },
-    'devtool': 'source-map',
+    'devtool': 'false',
+    'resolve': {
+        'alias': {
+            'root': path.resolve(__dirname, '../src')
+        },
+		'extensions': ['', '.js']
+	},
+    'resolveLoader': {
+        'modulesDirectories': [path.resolve(__dirname, '../node_modules')]
+    },
     'module': {
         loaders: [
             {
