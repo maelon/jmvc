@@ -6,7 +6,7 @@
 # Description: 发布者、订阅者的实现类
 ===================================================================*/
 
-import IPSManager from './pslib/interface_manager/IPSManager.js';
+import IPSManager from 'pslib/interface_manager/IPSManager';
 
 /**
 * @extends IPSManager

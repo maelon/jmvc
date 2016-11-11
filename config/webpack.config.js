@@ -17,7 +17,14 @@ module.exports = {
     'devtool': 'false',
     'resolve': {
         'alias': {
-            'root': path.resolve(__dirname, '../src')
+            'root': path.resolve(__dirname, '../src'),
+            'pslib': path.resovle(__dirname, '../src/pslib'),
+            'facade': path.resovle(__dirname, '../src/facade'),
+            'model': path.resovle(__dirname, '../src/model'),
+            'view': path.resovle(__dirname, '../src/view'),
+            'controller': path.resovle(__dirname, '../src/controller'),
+            'command': path.resovle(__dirname, '../src/command'),
+            'proxy': path.resovle(__dirname, '../src/proxy')
         },
 		'extensions': ['', '.js']
 	},
