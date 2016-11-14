@@ -7,6 +7,7 @@
 ===================================================================*/
 
 import ISubscriber from 'pslib/interface_ps/ISubscriber';
+import Notifation from 'pslib/ps/Notifation';
 
 /**
 * @extends ISubscriber
@@ -18,6 +19,8 @@ class Subscriber extends ISubscriber {
     * @constructor
     */
     constructor() {
+        this._method = null;
+        this._context = null;
     }
 
     /**
@@ -26,6 +29,9 @@ class Subscriber extends ISubscriber {
     * @param {Function} method 通知回调的方法
     */
     set notifyMethod(method) {
+        if(method && typeof method === 'function') {
+            this._method = method;
+        }
     }
 
     /**
@@ -34,6 +40,9 @@ class Subscriber extends ISubscriber {
     * @param {Object} context 回调方法上下文
     */
     set notifyContext(context) {
+        if(method && typeof method === 'object') {
+            this._method = method;
+        }
     }
 
     /**
@@ -42,6 +51,9 @@ class Subscriber extends ISubscriber {
     * @param {INotifation} notification 通知对象
     */
     notify(notification) {
+        if(notification instanceof Notification && this._method) {
+            this._method.call(this._context, notification);
+        }
     }
 }
 
