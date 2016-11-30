@@ -1,10 +1,21 @@
-var webpack = require('webpack');
-var webpackDevServer = require('webpack-dev-server');
-var webpackConfigBase = require('./webpack.config.js');
+'use strict';
 
-var compiler = new webpack(webpackConfigBase);
-var server = new webpackDevServer(compiler, {
+const path = require('path');
+const webpack = require('webpack');
+const webpackDevServer = require('webpack-dev-server');
+
+const config = require('./webpack.dev.config.js');
+
+const compiler = new webpack(config);
+const server = new webpackDevServer(compiler, {
+    contentBase: path.resolve(__dirname, '../src/'),
+    noInfo: true,
+    hot: true,
     publicPath: ''
 });
-server.listen(8000, 'localhost', function (e) {
+server.listen(8000, 'localhost',  err => {
+    if(err) {
+        throw err;
+    }
+    console.log('listening at port 8000');
 });
