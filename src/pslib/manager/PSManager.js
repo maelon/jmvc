@@ -29,11 +29,27 @@ class PSManager extends IPSManager {
     }
 
     /**
+    * @description 注销一个订阅者
+    * @public
+    * @param {Subscriber} subscriber 订阅者
+    */
+    unregisterSubscriber(subscriber) {
+    }
+
+    /**
     * @description 注册一个发布者
     * @public
     * @param {Publisher} publisher 发布者
     */
     registerPublisher(publisher) {
+    }
+
+    /**
+    * @description 注销一个发布者
+    * @public
+    * @param {Publisher} publisher 发布者
+    */
+    unregisterPublisher(publisher) {
     }
 }
 

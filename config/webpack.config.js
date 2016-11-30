@@ -1,22 +1,35 @@
-var webpack = require('webpack');
-var path = require('path');
-var htmlWebpackPlugin = require('html-webpack-plugin');
+'use strict';
+
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
     'entry': {
-        'app': ['./test-es6.js']
+        'jmvc': [ path.resolve(__dirname, '../src/jmvc.js') ]
     },
     'output': {
-        'path': path.resolve(__dirname, '../build'),
-        'filename': '[name].[chunkhash].js',
-        'sourceMapFilename': '[name].[chunkhash].js.map'
+        'path': path.resolve(__dirname, '../dist'),
+        'filename': '[name].min.js',
+        'sourceMapFilename': '[name].js.map',
+        'library': '[name]',
+        'libraryTarget': 'umd'
     },
-    'devtool': 'source-map',
+    'devtool': 'false',
     'resolve': {
         'alias': {
-            'pslib': path.resolve(__dirname, '../src/pslib')
+            'root': path.resolve(__dirname, '../src'),
+            'pslib': path.resovle(__dirname, '../src/pslib'),
+            'facade': path.resovle(__dirname, '../src/facade'),
+            'model': path.resovle(__dirname, '../src/model'),
+            'view': path.resovle(__dirname, '../src/view'),
+            'controller': path.resovle(__dirname, '../src/controller'),
+            'command': path.resovle(__dirname, '../src/command'),
+            'proxy': path.resovle(__dirname, '../src/proxy')
         },
-        'extensions': ['', 'js']
+		'extensions': ['', '.js']
+	},
+    'resolveLoader': {
+        'modulesDirectories': [path.resolve(__dirname, '../node_modules')]
     },
     'module': {
         loaders: [
